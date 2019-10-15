@@ -1,0 +1,5 @@
+<div class="container my-container">
+  <div *ngFor="let item of peopleList">
+    <my-card [name]="item.name" (buttonClick)="routeWithData(item)"></my-card>
+  </div>
+</div>

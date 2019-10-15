@@ -1,0 +1,10 @@
+<div class="container my-container">
+  <div *ngFor="let item of films">
+    <my-movie
+      [title]="item.title"
+      [release]="item.release_date"
+      [director]="item.director"
+      [producer]="item.producer"
+    ></my-movie>
+  </div>
+</div>
