@@ -30,23 +30,9 @@ export class RestService {
     return throwError(errorMessage);
   }
 
-  getPeople() {
-    // retry 3 times to ask server
-    return this.http.get(this.baseUrl + "people").pipe(
-      retry(3),
-      catchError(this.handleError)
-    );
-  }
-
-  getFilms() {
-    return this.http.get(this.baseUrl + "films").pipe(
-      retry(3),
-      catchError(this.handleError)
-    );
-  }
-
-  getPlanets() {
-    return this.http.get(this.baseUrl + "planets").pipe(
+  mockHTTPRequest(urlP: string) {
+    let url = urlP;
+    return this.http.get(this.baseUrl + url).pipe(
       retry(3),
       catchError(this.handleError)
     );

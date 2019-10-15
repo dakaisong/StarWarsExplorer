@@ -28,7 +28,7 @@ export class PeopleComponent implements OnInit {
 
   private getPeopleList() {
     this.spinner.show();
-    this.restService.getPeople().subscribe(data => {
+    this.restService.mockHTTPRequest("people").subscribe(data => {
       this.peopleList = data["results"];
       this.spinner.hide();
     });

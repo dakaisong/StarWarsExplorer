@@ -27,7 +27,7 @@ export class PlantesComponent implements OnInit {
 
   private getPeopleList() {
     this.spinner.show();
-    this.restService.getPlanets().subscribe(data => {
+    this.restService.mockHTTPRequest("planets").subscribe(data => {
       this.planets = data["results"];
       this.spinner.hide();
     });

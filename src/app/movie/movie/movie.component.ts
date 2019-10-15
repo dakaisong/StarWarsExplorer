@@ -27,7 +27,7 @@ export class MovieComponent implements OnInit {
 
   private getFilms() {
     this.spinner.show();
-    this.restService.getFilms().subscribe(data => {
+    this.restService.mockHTTPRequest("films").subscribe(data => {
       this.films = data["results"];
       this.spinner.hide();
     });
