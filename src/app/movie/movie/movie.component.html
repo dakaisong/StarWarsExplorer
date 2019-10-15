@@ -5,6 +5,8 @@
       [release]="item.release_date"
       [director]="item.director"
       [producer]="item.producer"
+      (buttonClick)="routeWithData(item)"
     ></my-movie>
   </div>
 </div>
+<ngx-spinner></ngx-spinner>

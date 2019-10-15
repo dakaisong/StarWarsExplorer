@@ -1,3 +1,7 @@
+/*
+ * write by Dakai Song
+ * date 2019-10-14
+ */
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
@@ -27,6 +31,7 @@ export class RestService {
   }
 
   getPeople() {
+    // retry 3 times to ask server
     return this.http.get(this.baseUrl + "people").pipe(
       retry(3),
       catchError(this.handleError)

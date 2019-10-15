@@ -5,6 +5,9 @@
     </div>
     <div class="col-md-10" style="text-align: left;" (click)="goPage($event)">
       <h5>{{ title }}</h5>
+      <span (click)="goPage($event)" style="float: right;">
+        <fa name="chevron-right"></fa>
+      </span>
       <p>
         <fa name="film"></fa>
         <span>Release Date:</span> {{ relase }}

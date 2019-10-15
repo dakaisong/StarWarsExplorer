@@ -1,1 +1,30 @@
-<p>movie-detail works!</p>
+<div class="container">
+  <div class="my-detail-content">
+    <div class="row">
+      <div class="col-md-12">
+        <img
+          src="../../../assets/img/starwarsbg.jpeg"
+          class="img-fluid"
+          width="100%"
+          alt="Responsive image"
+        />
+        <h5>{{ film.title }}</h5>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <p><span>Director</span> {{ film.director }}</p>
+            <p><span>Relase date</span> {{ film.release_date }}</p>
+          </div>
+          <div class="col-md-6">
+            <p><span>Producer</span> {{ film.producer }}</p>
+            <p><span>Episode_id</span> {{ film.episode_id }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <p>{{ film.opening_crawl }}</p>
+      </div>
+    </div>
+  </div>
+</div>

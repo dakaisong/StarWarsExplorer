@@ -1,6 +1,6 @@
 <div class="container my-container">
-  <div *ngFor="let item of list">
-    <h5>Hello world</h5>
+  <div class="my-list" *ngFor="let item of planets">
+    <h5>{{ item.name }}</h5>
     <p>Terrain:{{ item.terrain }}</p>
     <p>Population:{{ item.population }}</p>
   </div>

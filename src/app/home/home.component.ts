@@ -1,3 +1,7 @@
+/*
+ * write by Dakai Song
+ * date 2019-10-14
+ */
 import { Component, OnInit } from '@angular/core';
 
 @Component({

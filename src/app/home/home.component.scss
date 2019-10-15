@@ -1,8 +1,18 @@
 .content {
-  display: flex;
+  display: block;
   margin: 32px auto;
   padding: 0 16px;
   max-width: 960px;
   flex-direction: column;
   align-items: center;
+}
+
+.my-container {
+  margin-top: 20px auto;
+  padding: 10px 5px;
+
+  .my-list {
+    padding: 5px;
+    margin: 10px 5px;
+  }
 }
