@@ -13,7 +13,7 @@ const routes: Routes = [
     component: PeopleComponent
   },
   {
-    path: "detail",
+    path: "detail/:id",
     component: DetailComponent
   }
 ];

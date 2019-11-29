@@ -1,4 +1,4 @@
-<div class="container my-container">
+<div class="container my-container" *ngIf="person$  | async as person;">
   <h5>{{ person.name }}</h5>
   <label>Height</label>
   <p class="form-control-static">{{ person.height }}</p>

@@ -1,6 +1,6 @@
 <div class="container my-container">
-  <div *ngFor="let item of peopleList">
-    <my-card [name]="item.name" (buttonClick)="routeWithData(item)"></my-card>
+  <div *ngFor="let item of peopleList$ | async">
+    <my-card [name]="item.name" [routerLink]="['/people/detail',item.name]"></my-card>
   </div>
 </div>
 <ngx-spinner></ngx-spinner>

@@ -1,3 +1,5 @@
+import { ID } from '@datorama/akita';
+
 /*
  * write by Dakai Song
  * date 2019-10-14
