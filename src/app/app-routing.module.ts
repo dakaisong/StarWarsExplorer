@@ -20,6 +20,11 @@ const routes: Routes = [
       import("./planets/planets.module").then(m => m.PlanetsModule)
   },
   {
+    path: "contacts",
+    loadChildren: () =>
+      import("./contacts/contacts.module").then(m => m.ContactsModule)
+  },
+  {
     path: "**",
     component: HomeComponent
   }

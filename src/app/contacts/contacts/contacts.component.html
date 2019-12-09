@@ -1,0 +1,51 @@
+<div class="container" style="margin-top: 20px;">
+    <h1 style="margin-bottom: 20px;">Contacts</h1>
+
+    <ng-container *ngIf="(contacts$ | async) as contacts">
+      <section [class.hide]="paginatorRef.isLoading$ | async">
+  
+        <select class="custom-select" [formControl]="sortByControl" style="margin-bottom: 10px;">
+          <option ngValue="name">Name</option>
+          <option ngValue="email">Email</option>
+        </select>
+  
+        <table class="table">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let contact of contacts.data">
+            <th scope="row">{{ contact.id }}</th>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.address }}</td>
+          </tr>
+          </tbody>
+        </table>
+  
+        <nav>
+          <ul class="pagination justify-content-end">
+            <li class="page-item" [class.disabled]="paginatorRef.isFirst" (click)="paginatorRef.prevPage()">
+              <a class="page-link" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"
+                [class.active]="paginatorRef.isPageActive(page)"
+                (click)="paginatorRef.setPage(page)"
+                *ngFor="let page of contacts.pageControls">
+              <a class="page-link">{{ page }}</a>
+            </li>
+            <li class="page-item" [class.disabled]="paginatorRef.isLast" (click)="paginatorRef.nextPage()">
+              <a class="page-link">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+  
+    </ng-container> 
+  
+  </div>
