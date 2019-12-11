@@ -3,34 +3,55 @@ import { timer } from 'rxjs';
 import { mapTo } from 'rxjs/operators';
 import * as _ from 'lodash';
 
-const count = 96;
-const data = [];
-
-for (let i = 0; i < count; i++) {
-  data.push({
-    id: faker.random.number(),
-    email: faker.internet.email(),
-    name: faker.name.findName(),
-    address: faker.address.streetAddress()
-  });
-}
+// const count = 96;
+let data = [{"id":98918,"email":"Zachery47@gmail.com","name":"Percy Turner","address":"79991 Deonte Common"},{"id":76372,"email":"Bailey.Bernier11@gmail.com","name":"Casey Gottlieb","address":"36201 Odessa Centers"},{"id":25784,"email":"Tevin_Reilly4@hotmail.com","name":"Mya Conroy","address":"1418 Beer Knolls"},{"id":34177,"email":"Lindsey_Prohaska86@gmail.com","name":"Mr. Shayna Fisher","address":"540 Margot Shores"},{"id":13044,"email":"Deshawn_Ernser77@hotmail.com","name":"Sarina Kozey","address":"126 Walsh Motorway"},{"id":30766,"email":"Rogers.Farrell@hotmail.com","name":"Junior Walker","address":"8473 Langworth Ports"},{"id":57747,"email":"Percy.Langosh72@gmail.com","name":"Darian Mann","address":"166 Monica Radial"},{"id":3649,"email":"Meda84@hotmail.com","name":"Orin Monahan PhD","address":"0032 Beatrice Islands"},{"id":18148,"email":"Saul_Dach@gmail.com","name":"Miss Allan Swaniawski","address":"58554 Franecki Island"},{"id":17366,"email":"Kiana_Quitzon@hotmail.com","name":"Conrad Zulauf","address":"0936 Esmeralda Well"},{"id":14725,"email":"Kendra_Becker@hotmail.com","name":"Patsy Harvey","address":"22193 Greenfelder Tunnel"},{"id":38702,"email":"Gilbert68@yahoo.com","name":"Hans Bailey III","address":"67497 Gleason Passage"},{"id":64778,"email":"Cordell.Funk84@yahoo.com","name":"Cecilia Klocko V","address":"228 DuBuque Throughway"},{"id":35341,"email":"Mauricio.Greenfelder@gmail.com","name":"Alisa Daugherty","address":"28555 Torp Valleys"},{"id":16955,"email":"Myrtle_Ward27@hotmail.com","name":"Jarrod Wuckert","address":"97781 Beahan Bridge"},{"id":58571,"email":"Antonette.Langosh32@gmail.com","name":"Domenico Leuschke","address":"4284 Heller Rapid"},{"id":82706,"email":"Leanna_Macejkovic45@yahoo.com","name":"Mitchell Aufderhar","address":"6861 Emanuel Valleys"},{"id":42246,"email":"Ova_Toy@gmail.com","name":"Mr. Rusty Watsica","address":"88335 Pfeffer Parkway"},{"id":82577,"email":"Westley90@hotmail.com","name":"Rogelio Ferry","address":"55945 Beatrice Station"},{"id":67041,"email":"Michele.Gibson99@yahoo.com","name":"Velda Rodriguez","address":"133 Marianna Burg"},{"id":24858,"email":"Bernadette.Lemke41@hotmail.com","name":"Jaylin MacGyver","address":"95465 Marks Pine"},{"id":70179,"email":"Aiden5@gmail.com","name":"Miss Mireya Ebert","address":"7363 Marian Hollow"},{"id":35115,"email":"Annette23@yahoo.com","name":"Selena Doyle IV","address":"0396 Mauricio Center"},{"id":80382,"email":"Leslie38@gmail.com","name":"Duane Pfeffer DVM","address":"64084 Sporer Course"},{"id":51571,"email":"Jaiden.Hyatt14@hotmail.com","name":"Dr. Amos Ortiz","address":"0415 Halvorson Neck"},{"id":75725,"email":"Kiarra_Nitzsche@gmail.com","name":"Daphney Larkin","address":"533 Jamaal River"},{"id":73562,"email":"Eunice_Hintz54@gmail.com","name":"Uriel Pouros MD","address":"73403 Rene Hollow"},{"id":73179,"email":"Marisol_Hickle70@yahoo.com","name":"Precious Auer","address":"335 Waino Island"},{"id":37289,"email":"Ray19@yahoo.com","name":"Estella Koepp","address":"756 Desmond Groves"},{"id":322,"email":"Lizzie_Murazik32@gmail.com","name":"Kenna DuBuque","address":"041 Oren Port"},{"id":4073,"email":"Tyrese48@hotmail.com","name":"Amiya Reilly","address":"20563 Ray Ports"},{"id":58823,"email":"Mckenzie_Muller99@gmail.com","name":"Louisa Fisher","address":"268 VonRueden Place"},{"id":9869,"email":"Elwyn_Mayert70@yahoo.com","name":"Hugh Hilpert","address":"350 Jacobi Parkways"},{"id":89857,"email":"Doyle.Treutel@hotmail.com","name":"Mr. Santino Harber","address":"484 Bartoletti Forges"},{"id":35890,"email":"Cecelia0@yahoo.com","name":"Hope Stroman","address":"1410 Coleman Wall"},{"id":5919,"email":"Quincy.Ankunding@gmail.com","name":"Rosalinda Roob","address":"4969 Heber Ports"},{"id":54255,"email":"Daphne79@yahoo.com","name":"Alia Schowalter III","address":"74367 Pearlie Pass"},{"id":53675,"email":"Reilly.Prosacco14@gmail.com","name":"Giovanna Fahey","address":"1405 Boyle Well"},{"id":87422,"email":"Marilou_Turcotte63@hotmail.com","name":"Christophe Bechtelar","address":"11240 Jaskolski Vista"},{"id":84767,"email":"Estella91@hotmail.com","name":"Schuyler Jenkins","address":"1751 Rodrigo Courts"},{"id":73370,"email":"Kyleigh_Hoppe@hotmail.com","name":"Destiny Pollich","address":"899 Wolf Groves"},{"id":43415,"email":"Laurence_Pacocha@yahoo.com","name":"Hershel Ziemann","address":"0118 Greenholt Pine"},{"id":87987,"email":"Jon.Bashirian@hotmail.com","name":"Laurence Price I","address":"221 Koss Forks"},{"id":69510,"email":"Terrill.Hickle99@gmail.com","name":"Dock Parisian","address":"69000 Earnestine Estate"},{"id":39841,"email":"Tyson45@yahoo.com","name":"Magdalen Batz","address":"32386 Sipes Freeway"},{"id":68138,"email":"Selmer.Leuschke84@yahoo.com","name":"Herminia Feeney","address":"372 Witting Centers"},{"id":97169,"email":"Emil.Windler41@gmail.com","name":"Willis Batz","address":"1703 Justina Islands"},{"id":76163,"email":"Alyson_Paucek@hotmail.com","name":"Monique Walsh","address":"660 Dangelo Course"},{"id":64049,"email":"Ebony_Blanda@yahoo.com","name":"Urban Runolfsson","address":"995 Deon Valley"},{"id":93363,"email":"Theo_Nicolas55@yahoo.com","name":"Kip Connelly","address":"142 Orn Run"},{"id":53795,"email":"Colby.Kutch@yahoo.com","name":"Nico Ullrich","address":"25402 Larue Shores"},{"id":91629,"email":"Estevan.West57@gmail.com","name":"Sophia Bahringer MD","address":"64184 Greenfelder Viaduct"},{"id":83914,"email":"Dell18@hotmail.com","name":"Dr. Muriel Kemmer","address":"723 Miles Vista"},{"id":9494,"email":"Evert.Lesch@yahoo.com","name":"Eloy Stracke","address":"793 Margarett Fall"},{"id":66021,"email":"Nolan.Prohaska45@gmail.com","name":"Ms. Leatha Weber","address":"6929 Kutch Pine"},{"id":98569,"email":"Araceli48@gmail.com","name":"Jaeden Dicki","address":"1943 Gloria Lights"},{"id":59335,"email":"Coy81@hotmail.com","name":"Vicenta Cole II","address":"0549 Delores River"},{"id":8139,"email":"Lyric.Okuneva21@hotmail.com","name":"Deion Lemke","address":"50831 Schoen Roads"},{"id":70516,"email":"Joanne_Murazik@gmail.com","name":"Hassie Bergstrom","address":"78423 Leopoldo Walks"},{"id":9047,"email":"Tressie53@yahoo.com","name":"Arvilla Aufderhar","address":"75709 Carroll Locks"},{"id":23827,"email":"Jordy.Kuhic78@yahoo.com","name":"Roma Bechtelar","address":"913 Alexandrine Trail"},{"id":13851,"email":"Ollie_Kuvalis@hotmail.com","name":"Foster Runolfsdottir","address":"7640 Miller Groves"},{"id":63450,"email":"Greta.Goodwin@hotmail.com","name":"Denis Mante","address":"73605 Araceli Junction"},{"id":58419,"email":"Dangelo29@yahoo.com","name":"Nedra McClure Sr.","address":"01893 Boyle Avenue"},{"id":74732,"email":"Kayli.Zemlak@hotmail.com","name":"Savanna Jacobi","address":"5052 Schmitt Spur"},{"id":37577,"email":"Darrion_Erdman79@gmail.com","name":"Larue Wilderman Sr.","address":"54155 Georgianna Mountains"},{"id":97059,"email":"Gussie36@hotmail.com","name":"Tyshawn Hermann","address":"173 Little Mill"},{"id":68922,"email":"Jessyca57@yahoo.com","name":"Philip Cummings","address":"6380 Granville Spur"},{"id":13741,"email":"Cassie_Weissnat@yahoo.com","name":"Anais Wilkinson I","address":"2736 Kennedi Turnpike"},{"id":83796,"email":"Lila_Pollich71@yahoo.com","name":"Esta Yost","address":"026 Pablo Mission"},{"id":88907,"email":"Justen60@yahoo.com","name":"Maximo Ebert Sr.","address":"28094 Kreiger Valleys"},{"id":81233,"email":"Kassandra34@hotmail.com","name":"Miguel Purdy DDS","address":"201 Carlotta Meadow"},{"id":61483,"email":"Hollis_Spinka@gmail.com","name":"Mrs. Akeem Jaskolski","address":"12442 Mayert Mount"},{"id":38777,"email":"Carli.Olson99@hotmail.com","name":"Mrs. Brandon Wuckert","address":"4659 Johns Motorway"},{"id":40196,"email":"Kaylah.Weber@gmail.com","name":"Brittany Prosacco","address":"8612 Gerard Row"},{"id":40474,"email":"Thalia.Dietrich@yahoo.com","name":"Cassandra Sawayn","address":"9715 Cortez Crescent"},{"id":6123,"email":"Aron.Muller47@yahoo.com","name":"Kieran Trantow","address":"27557 Stamm Mills"},{"id":41070,"email":"Antwan.Schneider@yahoo.com","name":"Corene Turner PhD","address":"9664 Cindy Shoal"},{"id":41685,"email":"Demarco.Muller24@gmail.com","name":"Chelsie Schaefer","address":"550 Robb Glen"},{"id":94230,"email":"Naomi76@hotmail.com","name":"Scottie Kautzer","address":"01766 Gusikowski Centers"},{"id":326,"email":"Maude55@gmail.com","name":"Carmine Becker","address":"1448 Kertzmann Brooks"},{"id":27705,"email":"Cheyanne.Ruecker@hotmail.com","name":"Miss Beverly Heaney","address":"6843 Mikel Junctions"},{"id":37616,"email":"Dannie_Mills@yahoo.com","name":"Rusty Mohr","address":"97415 Cordell Cliffs"},{"id":95782,"email":"Mia.Stark54@yahoo.com","name":"Rhiannon Blanda","address":"8930 Fiona Mission"},{"id":52797,"email":"Delilah_Sauer@hotmail.com","name":"Stephanie Weissnat","address":"19079 Schimmel Rapids"},{"id":68678,"email":"Danielle_Prohaska@gmail.com","name":"Friedrich McKenzie","address":"8625 Marvin Crest"},{"id":81559,"email":"Marcel_Stiedemann24@yahoo.com","name":"Ike Hudson I","address":"33148 Bernier Circles"},{"id":25615,"email":"Mitchel_Smith53@yahoo.com","name":"Mertie Donnelly","address":"58617 Roob Locks"},{"id":86003,"email":"America_Gleason@hotmail.com","name":"Herta Anderson","address":"89538 Reid Alley"},{"id":65671,"email":"Freeda_Hudson@yahoo.com","name":"Zachariah Heller","address":"372 Breitenberg Falls"},{"id":5587,"email":"Roslyn_Kemmer@hotmail.com","name":"Jaydon Paucek II","address":"690 Libbie Junction"},{"id":77331,"email":"Ressie84@gmail.com","name":"Jack Balistreri","address":"9767 Kailee Unions"},{"id":97703,"email":"Franz.Murray@gmail.com","name":"Lennie Balistreri","address":"497 Alexandra Viaduct"},{"id":68774,"email":"Price.Collier74@gmail.com","name":"Trinity Schmeler","address":"226 Wilkinson Radial"},{"id":70056,"email":"Omer83@gmail.com","name":"Bruce Bruen II","address":"46703 Grant Forks"},{"id":41561,"email":"Jana_Spencer@gmail.com","name":"Mrs. Dariana Borer","address":"31177 Pouros Island"}];
+let items = [];
+// for (let i = 0; i < count; i++) {
+//   data.push({
+//     id: faker.random.number(),
+//     email: faker.internet.email(),
+//     name: faker.name.findName(),
+//     address: faker.address.streetAddress()
+//   });
+// }
 
 export function getData(params) {
   console.log('Fetching from server');
+  console.log(JSON.stringify(data));
   const merged = { ...{ sortBy: 'email', perPage: 10 }, ...params };
+
+  const name = merged.name? merged.name :'';
+  if(name !== ''){
+     items = _.filter(data,item =>{
+      if(item.name.indexOf(name) == 0 ){
+        return item;
+      }
+    })
+    console.log(items);
+  }else{
+    items = data;
+  }
+
+  console.log(merged);
   const offset = (merged.page - 1) * +merged.perPage;
-  const sorted = _.sortBy(data, merged.sortBy);
+  const sorted = _.sortBy(items, merged.sortBy);
   const paginatedItems = sorted.slice(offset, offset + +merged.perPage);
 
   return {
     currentPage: merged.page,
     perPage: +merged.perPage,
-    total: data.length,
-    lastPage: Math.ceil(data.length / +merged.perPage),
+    total: items.length,
+    lastPage: Math.ceil(items.length / +merged.perPage),
     data: paginatedItems
   };
 }
 
 export const getContacts = function(params) {
+  console.log('get contacts');
   return timer(1000).pipe(mapTo(getData(params)));
 };
+
+export const getContactByName = function(params) {
+  console.log('get contact');
+  return timer(1000).pipe(mapTo(getData(params)));
+}

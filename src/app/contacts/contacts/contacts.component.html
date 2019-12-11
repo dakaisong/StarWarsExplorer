@@ -1,7 +1,7 @@
 <div class="container" style="margin-top: 20px;">
     <h1 style="margin-bottom: 20px;">Contacts</h1>
     <input type="text" class="form-control mb-2" placeholder="Search by username" aria-label="Username" [formControl]="filter" />
-    <ng-container *ngIf="(contacts$ | async) as contacts">
+    <ng-container *ngIf="contacts">
       <section [class.hide]="paginatorRef.isLoading$ | async">
   
         <select class="custom-select" [formControl]="sortByControl" style="margin-bottom: 10px;">
